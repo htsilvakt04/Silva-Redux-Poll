@@ -8,9 +8,9 @@ const AUTHED_ID = 'tylermcginnis'; // we can get it from cookies (session ID)
 export function handleInitialData () {
     return (dispatch) => {
         getInitialData()
-            .then(({users, pools}) => {
+            .then(({users, polls}) => {
                 dispatch(USER_ACTION.receive(users));
-                dispatch(POOL_ACTION.receive(pools));
+                dispatch(POOL_ACTION.receive(polls));
                 dispatch(setAuthedUser(AUTHED_ID));
             })
             .catch((err) => {
