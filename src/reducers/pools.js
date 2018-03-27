@@ -1,4 +1,4 @@
-import {RECEIVE_POLLS} from '../actions/pools';
+import {RECEIVE_POLLS, ADD_POLL} from '../actions/pools';
 
 export default function pools (state = {}, action) {
     switch (action.type) {
@@ -6,6 +6,11 @@ export default function pools (state = {}, action) {
             return {
                 ...state,
                 ...action.pools
+            };
+        case ADD_POLL:
+            return {
+                ...state,
+                [action.pool.id]: action.pool
             };
         default:
             return state;

@@ -20,7 +20,6 @@ class App extends Component {
             return <LoadingBar/>;
         }
 
-
         return (
             <Router>
                 <div>

@@ -1,5 +1,6 @@
 import React from 'react';
-
+import {handleAddPool} from '../actions/pools';
+import {connect} from 'react-redux';
 class AddPoll extends React.Component {
     state = {
         question: '',
@@ -16,9 +17,14 @@ class AddPoll extends React.Component {
     }
     handleSubmit = (event) => {
         event.preventDefault();
-        // inform that your question is ok to append in the List of all question
-        console.log(this.state);
-        // dispatch this add poll event to store (authedUser, polls)
+
+        this.props.dispatch(
+            handleAddPool(this.state)
+        ).then((savedPool) => {
+            // you can do like: assert.equal to check here
+            // redirect user to the homepage
+            // this.props.history.push('/');
+        });
     }
     isDisable = () => {
         let { question, a, b, c, d } = this.state;
@@ -51,4 +57,5 @@ class AddPoll extends React.Component {
         )
     }
 }
-export default AddPoll;
+
+export default connect()(AddPoll);

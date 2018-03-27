@@ -185,7 +185,7 @@ export function _getPolls () {
   })
 }
 
-function formatPoll (poll) {
+export function formatPoll (poll) {
   return {
     ...poll,
     id: generateUID(),
