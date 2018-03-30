@@ -252,7 +252,7 @@ export function _savePollAnswer ({ authedUser, id, answer }) {
         }
       }
 
-      res()
+      res(polls[id])
     }, 500)
   })
 }

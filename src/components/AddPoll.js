@@ -21,9 +21,7 @@ class AddPoll extends React.Component {
         this.props.dispatch(
             handleAddPool(this.state)
         ).then((savedPool) => {
-            // you can do like: assert.equal to check here
-            // redirect user to the homepage
-            // this.props.history.push('/');
+            this.props.history.push('/');
         });
     }
     isDisable = () => {

@@ -1,10 +1,13 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 
 function Answer(props) {
     return (
-        props.data.map( pool => {
-            return <li key={pool.id}>{pool.question}</li>
+        props.data.map( ({id, question}) => {
+            return <Link to={{
+                pathname: '/poll/' + id
+            }} key={id}>{question}</Link>
         })
     )
 }
