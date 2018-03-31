@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 function Answer(props) {
     return (
         props.data.map( ({id, question}) => {
-            return <Link to={{
+            return <Link style={{display: 'block', marginBottom: '10px'}} to={{
                 pathname: '/poll/' + id
             }} key={id}>{question}</Link>
         })

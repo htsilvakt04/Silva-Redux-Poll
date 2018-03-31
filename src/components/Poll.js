@@ -2,7 +2,9 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {getPercentage} from '../utils/helpers';
 import {handleAddAnswer} from '../actions/answer';
+import {Link} from 'react-router-dom';
 const getVoteKeys = () => ['aVotes','bVotes','cVotes','dVotes'];
+
 
 function AnswerList(props) {
     let didClick = false;
@@ -40,6 +42,11 @@ function AnswerList(props) {
                     </li>
                 )
             })}
+            {vote !== null &&
+                <div style={{textAlign: 'center', marginTop: '25px'}}>
+                    <Link className="btn" to="/">Back</Link>
+                </div>
+            }
         </ul>
     )
 }
@@ -50,7 +57,10 @@ class Poll extends React.Component {
         let {pool, authedUser} = this.props;
         this.props.dispatch(
             handleAddAnswer({authedUser, id: pool.id, answer})
-        )
+        );
+
+
+
 
     }
     render () {
