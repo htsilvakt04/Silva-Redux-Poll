@@ -3,7 +3,7 @@ let HTML = require('html-webpack-plugin');
 let webpack = require('webpack');
 
 let config  = {
-    entry: [ 'whatwg-fetch', 'babel-polyfill', './app/index.js' ],
+    entry: [ 'whatwg-fetch', 'babel-polyfill', './src/index.js' ],
     output: {
         path:  path.resolve(__dirname, 'dist'),
         filename: 'silva.bundle.js',
@@ -17,7 +17,7 @@ let config  = {
     },
     plugins: [
         new HTML({
-            template: './app/index.html'
+            template: './public/index.html'
         })
     ],
     devServer: {
