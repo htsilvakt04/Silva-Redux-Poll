@@ -58,10 +58,6 @@ class Poll extends React.Component {
         this.props.dispatch(
             handleAddAnswer({authedUser, id: pool.id, answer})
         );
-
-
-
-
     }
     render () {
         let {pool, owner, vote} = this.props;
